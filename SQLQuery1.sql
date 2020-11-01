@@ -19,6 +19,9 @@ drop table AddressBook1;
 --UC3
 INSERT INTO AddressBook1 VALUES('Sharyu','Raut','akola','xyz','Maharashtra',123456,1234567890,'abc@gmail.com');
 INSERT INTO AddressBook1 VALUES('ABC','DEF','abcd','andheri','Maharashtra',123456,1234567890,'abc@gmail.com');
+INSERT INTO AddressBook1 VALUES('ABrC','DEAF','abcd','andheri','Maharashtra',123456,1234567890,'abc@gmail.com');
+INSERT INTO AddressBook1 VALUES('GBeC','DEF','abcd','andheri','Maharashtra',123456,1234567890,'abc@gmail.com');
+INSERT INTO AddressBook1 VALUES('AZBC','DEF','abcd','andheri','Maharashtra',123456,1234567890,'abc@gmail.com');
 
 --UC4
 UPDATE AddressBook1 SET phoneNumber=7894561230 WHERE firstName='Sharyu';
@@ -37,7 +40,7 @@ SELECT state,COUNT(email) FROM AddressBook1
 GROUP BY state;
 
 --UC8
-SELECT * FROM AddressBook1 WHERE CITY='Thane' ORDER BY(firstName);
+SELECT * FROM AddressBook1 WHERE CITY='andheri' ORDER BY(firstName);
 
 
 
