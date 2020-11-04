@@ -143,3 +143,24 @@ SELECT SUM(basic_pay) AS SALARY_F, AVG(taxable_pay) AS AVERAGE_F,
 
 /*UC 12*/
 SELECT * FROM Payroll;
+
+/*StoredProcedure*/
+create procedure [dbo].[AddNewEmployee]
+	@Name varchar(50),
+	@basic_pay decimal,
+	@start_Date datetime,
+	@gender char(1),
+	@phone_no varchar(250),
+	@address varchar(250),
+	@department varchar(150),
+	@deductions decimal,
+	@taxable_pay decimal,
+	@income_tax decimal,
+	@net_pay decimal
+as 
+BEGIN
+declare @id int
+	insert into employee_payroll values(@Name,@basic_pay ,@start_Date ,@gender ,@phone_no ,@address ,@department ,@deductions ,@taxable_pay ,@income_tax ,@net_pay);
+	set @id=(select top 1 id from employee_payroll order by id desc);
+	insert into Employee values(@id,100,200,400,500);
+END
